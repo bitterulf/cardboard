@@ -1,37 +1,30 @@
+.viewport-size {
+  width: 1024px;
+  height: 577px;
+}
+
+.x0 {
+  position: absolute;
+  left: 0px;
+}
+
+.x1 {
+  position: absolute;
+  left: 2024px;
+}
+
+.y0 {
+  top: 0px;
+}
+
+.y1 {
+  top: 1577px;
+}
+
 #scrollcontainer {
   position: relative;
-  width: 800px;
-  height: 600px;
   border: 1px solid black;
   overflow: hidden;
-}
-
-#scrolltarget1 {
-  margin: 30px;
-  display: block;
-  width: 300px;
-  position: absolute; left: 200px; top: 200px;
-}
-
-#scrolltarget2 {
-  display: block;
-  width: 800px;
-  height: 600px;
-  position: absolute; left: 1200px; top: 200px;
-}
-
-#scrolltarget3 {
-  margin: 30px;
-  display: block;
-  width: 300px;
-  position: absolute; left: 200px; top: 1200px;
-}
-
-#scrolltarget4 {
-  margin: 30px;
-  display: block;
-  width: 300px;
-  position: absolute; left: 1200px; top: 1200px;
 }
 
 .Absolute-Center {

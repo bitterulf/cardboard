@@ -6,11 +6,29 @@ var showMenu = function (id) {
 };
 
 var playVideo = function (id) {
-  videojs(id).ready(function () {
+  videojs('video').ready(function () {
     var myPlayer = this;
+    myPlayer.src("/clips/clip"+id+".webm");
     myPlayer.currentTime(0);
+    $('#video').show();
     myPlayer.play();
   });
+};
+
+var stopVideo = function () {
+  videojs('video').ready(function () {
+    var myPlayer = this;
+    myPlayer.currentTime(0);
+    myPlayer.stop();
+  });
+};
+
+var moveAndPlay = function (id) {
+  $('#video').hide();
+  $('#scrollcontainer').scrollTo('#scrolltarget'+id, 1000);
+  window.setTimeout(function(){
+    playVideo(id);
+  }, 1000);
 };
 
 $(document).ready(function () {
@@ -22,32 +40,8 @@ $(document).ready(function () {
     });
   });
 
-  $('.button1').click(function () {
-    $('#scrollcontainer').scrollTo('#scrolltarget1', 1000);
-    showMenu(1);
-  });
-
-  $('.button2').click(function () {
-    $('#scrollcontainer').scrollTo('#scrolltarget2', 1000);
-    playVideo("example_video_1");
-    showMenu(2);
-  });
-
-  $('.button3').click(function () {
-    $('#scrollcontainer').scrollTo('#scrolltarget3', 1000);
-    showMenu(3);
-  });
-
-  $('.button4').click(function () {
-    $('#scrollcontainer').scrollTo('#scrolltarget4', 1000);
-    showMenu(4);
-  });
-
-  videojs("example_video_1").ready(function () {
-    var myPlayer = this;
-    myPlayer.on("ended", function () {
-      $('#scrollcontainer').scrollTo('#scrolltarget1', 1000);
-      showMenu(1);
+  videojs("video").ready(function () {
+    this.on("ended", function () {
     });
   });
 

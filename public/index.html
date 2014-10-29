@@ -20,36 +20,32 @@
         <video id="inputVideo" autoplay loop style="display:none"></video>
       </div>
       <div class="col-md-12 menus menu1">
-        <div class="btn btn-default button3" onclick="">position 3</div>
-        <div class="btn btn-default button4" onclick="">position 4</div>
-      </div>
-      <div class="col-md-12 menus menu2">
-        <div class="btn btn-default button3" onclick="">position 3</div>
-        <div class="btn btn-default button4" onclick="">position 4</div>
-      </div>
-      <div class="col-md-12 menus menu3">
-        <div class="btn btn-default button1" onclick="">position 1</div>
-        <div class="btn btn-default button4" onclick="">position 4</div>
-      </div>
-      <div class="col-md-12 menus menu4">
-        <div class="btn btn-default button1" onclick="">position 1</div>
-        <div class="btn btn-default button2" onclick="">position 2</div>
+        <div class="btn btn-default button1" onclick="moveAndPlay(1)">position 1</div>
+        <div class="btn btn-default button2" onclick="moveAndPlay(2)">position 2</div>
+        <div class="btn btn-default button3" onclick="moveAndPlay(3)">position 3</div>
+        <div class="btn btn-default button4" onclick="moveAndPlay(4)">position 4</div>
       </div>
       <div class="col-md-12">
-        <div id="scrollcontainer">
-          <span id="scrolltarget1"><div class="Absolute-Center"><span class="detail">very secret information!</span>
-            <h3>position1</h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></span></div>
-          <span id="scrolltarget2">
-            <div class="Absolute-Center">
-              <video id="example_video_1" class="video-js vjs-default-skin" width="700" height="500"
-                poster="http://video-js.zencoder.com/oceans-clip.png"
-                data-setup='{ "controls": false, "autoplay": false, "preload": "auto"}'>
-               <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
-              </video>
-            </div>
-          </span>
-        <span id="scrolltarget3"><div class="Absolute-Center"><h3>position3</h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div></span>
-          <span id="scrolltarget4"><div class="Absolute-Center"><h3>position4</h3>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div></span>
+        <div id="scrollcontainer" class="viewport-size" style="position: absolute;">
+          <div id="scrolltarget1" class="viewport-size x0 y0">
+            <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+          </div>
+          <div id="scrolltarget2" class="viewport-size x1 y0">
+            <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+          </div>
+          <div id="scrolltarget3" class="viewport-size x0 y1 ">
+            <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+          </div>
+          <div id="scrolltarget4" class="viewport-size x1 y1">
+            <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+          </div>
+        </div>
+        <div class="viewport-size">
+          <video id="video" class="video-js vjs-default-skin" width="1024" height="577"
+                  poster="http://video-js.zencoder.com/oceans-clip.png"
+                  data-setup='{ "controls": false, "autoplay": false, "preload": "auto"}'>
+                 <source src="/clips/clip1.webm" type='video/webm' />
+          </video>
         </div>
       </div>
     </div>
