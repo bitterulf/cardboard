@@ -1,6 +1,9 @@
 var Hapi = require('hapi');
 var faye = require('faye');
 
+var Datastore = require('nedb')
+var db = new Datastore();
+
 var server = new Hapi.Server(8080);
 
 var bayeux = new faye.NodeAdapter({mount: '/pubsub', timeout: 45});
