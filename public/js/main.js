@@ -34,4 +34,15 @@ $(document).ready(function() {
       $('#scrollcontainer').scrollTo('#scrolltarget1', 1000);
     });
   });
+
+  var videoInput = document.getElementById('inputVideo');
+  var canvasInput = document.getElementById('inputCanvas');
+
+  var htracker = new headtrackr.Tracker();
+  htracker.init(videoInput, canvasInput);
+  htracker.start();
+
+  document.addEventListener('headtrackingEvent', function(event) {
+    console.log(event.z);
+  }, false);
 });
