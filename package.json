@@ -9,6 +9,7 @@
   "author": "team1",
   "license": "-",
   "dependencies": {
-    "hapi": "^7.1.1"
+    "hapi": "^7.1.1",
+    "faye": "^1.0.3"
   }
 }
