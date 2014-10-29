@@ -19,10 +19,10 @@
     <video id="inputVideo" autoplay loop style="display:none"></video>
     <div class="header" style="position: fixed; width: 100%; z-index: 100;">
       <div class="viewport-width topmenu" style="margin: 0 auto;">
-        <span class="" onclick="moveAndPlay(1)">FOOD</span>
-        <span class="" onclick="moveAndPlay(2)">WORK</span>
-        <span class="" onclick="moveAndPlay(3)">TRANSPORT</span>
-        <span class="" onclick="moveAndPlay(4)">MEDIA</span>
+        <span class="" onclick="moveAndPlay(1); markMenu(this);">FOOD</span>
+        <span class="" onclick="moveAndPlay(2); markMenu(this);">WORK</span>
+        <span class="" onclick="moveAndPlay(3); markMenu(this);">TRANSPORT</span>
+        <span class="" onclick="moveAndPlay(4); markMenu(this);">MEDIA</span>
       </div>
     </div>
     <table style="width: 100%; height: 100%;">
@@ -66,7 +66,7 @@
         <td rowspan="3"></td>
       </tr>
     </table>
-    <div class="header" style="position: fixed; bottom: 0px; width: 100%;">
+    <div class="footer" style="position: fixed; bottom: 0px; width: 100%;">
       <div class="viewport-width bottommenu" style="margin: 0 auto;">
         <div>1</div>
         <div>2</div>

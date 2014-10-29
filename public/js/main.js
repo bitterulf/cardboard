@@ -1,5 +1,10 @@
 var client = new Faye.Client('http://localhost:8080/pubsub');
 
+var markMenu = function(elem) {
+  $('.topmenu span').removeClass('active');
+  $(elem).addClass('active');
+};
+
 var showMenu = function (id) {
   $('.menus').hide();
   $('.menu' + id).show();

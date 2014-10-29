@@ -52,7 +52,7 @@ body {
   color: red;
 }
 
-.header {
+.header, .footer {
   background-color: rgba(0,0,0,0.4);
 }
 
@@ -61,12 +61,16 @@ body {
 }
 
 .topmenu span {
-  background-color: red;
-  color: white;
   display: inline-block;
   margin: 8px;
   cursor: pointer;
 }
+
+.topmenu span.active {
+  background-color: red;
+  color: white;
+}
+
 
 .bottommenu {
   height: 75px;
