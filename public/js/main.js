@@ -1,5 +1,15 @@
 var client = new Faye.Client('http://localhost:8080/pubsub');
 
+var clips = [
+  'Kai-food',
+  'Kai-transporation',
+  'Kai-work',
+  'Malwina-food',
+  'Malwina-media',
+  'Martin-media',
+  'Martin-work'
+];
+
 var markMenu = function(elem) {
   $('.topmenu span').removeClass('active');
   $(elem).addClass('active');
@@ -20,7 +30,7 @@ var showMenu = function (id) {
 var playVideo = function (id) {
   videojs('video').ready(function () {
     var myPlayer = this;
-    myPlayer.src("/clips/clip"+id+".webm");
+    myPlayer.src("/clips/"+clips[id-1]+".webm");
     myPlayer.currentTime(0);
     $('#video').show();
     myPlayer.play();
