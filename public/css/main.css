@@ -14,6 +14,9 @@
 }
 
 #scrolltarget2 {
+  display: block;
+  width: 800px;
+  height: 600px;
   position: absolute; left: 1200px; top: 200px;
 }
 
@@ -29,4 +32,13 @@
   display: block;
   width: 300px;
   position: absolute; left: 1200px; top: 1200px;
+}
+
+.Absolute-Center {
+  padding: 50px;
+  width: 800px;
+  height: 600px;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
