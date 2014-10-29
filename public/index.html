@@ -17,7 +17,7 @@
   <body>
     <canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
     <video id="inputVideo" autoplay loop style="display:none"></video>
-    <div class="header">
+    <div class="header" style="position: fixed; width: 100%; z-index: 100;">
       <div class="viewport-width topmenu" style="margin: 0 auto;">
         <span class="" onclick="moveAndPlay(1)">FOOD</span>
         <span class="" onclick="moveAndPlay(2)">WORK</span>
@@ -25,31 +25,52 @@
         <span class="" onclick="moveAndPlay(4)">MEDIA</span>
       </div>
     </div>
-    <div class="content">
-      <div class="viewport-width" style="margin: 0 auto;">
-        <div class="viewport-size" style="position: relative;">
-          <div id="scrollcontainer" class="viewport-size" style="position: absolute;">
-            <div id="scrolltarget1" class="viewport-size x0 y0">
-              <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
-            </div>
-            <div id="scrolltarget2" class="viewport-size x1 y0">
-              <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
-            </div>
-            <div id="scrolltarget3" class="viewport-size x0 y1 ">
-              <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
-            </div>
-            <div id="scrolltarget4" class="viewport-size x1 y1">
-              <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+    <table style="width: 100%; height: 100%;">
+      <tr>
+        <td rowspan="3"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <div class="content">
+            <div class="viewport-width" style="margin: 0 auto;">
+              <div class="viewport-size" style="position: relative;">
+                <div id="scrollcontainer" class="viewport-size" style="position: absolute;">
+                  <div id="scrolltarget1" class="viewport-size x0 y0">
+                    <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+                  </div>
+                  <div id="scrolltarget2" class="viewport-size x1 y0">
+                    <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+                  </div>
+                  <div id="scrolltarget3" class="viewport-size x0 y1 ">
+                    <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+                  </div>
+                  <div id="scrolltarget4" class="viewport-size x1 y1">
+                    <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+                  </div>
+                </div>
+                <div class="viewport-size">
+                  <video id="video" class="video-js vjs-default-skin" width="1024" height="577"
+                          poster="http://video-js.zencoder.com/oceans-clip.png"
+                          data-setup='{ "controls": false, "autoplay": false, "preload": "auto"}'>
+                         <source src="/clips/clip1.webm" type='video/webm' />
+                  </video>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="viewport-size">
-            <video id="video" class="video-js vjs-default-skin" width="1024" height="577"
-                    poster="http://video-js.zencoder.com/oceans-clip.png"
-                    data-setup='{ "controls": false, "autoplay": false, "preload": "auto"}'>
-                   <source src="/clips/clip1.webm" type='video/webm' />
-            </video>
-          </div>
-        </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td rowspan="3"></td>
+      </tr>
+    </table>
+    <div class="header" style="position: fixed; bottom: 0px; width: 100%;">
+      <div class="viewport-width bottommenu" style="margin: 0 auto;">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
       </div>
     </div>
   </body>
