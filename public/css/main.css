@@ -1,0 +1,7 @@
+#scrollcontainer {
+  position: relative;
+  width: 640px;
+  height: 265px;
+  border: 1px solid black;
+  overflow: hidden;
+}
