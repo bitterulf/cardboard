@@ -19,10 +19,10 @@
     <video id="inputVideo" autoplay loop style="display:none"></video>
     <div class="header" style="position: fixed; width: 100%; z-index: 100;">
       <div class="viewport-width topmenu" style="margin: 0 auto;">
-        <span class="" onclick="moveAndPlay(1); markMenu(this);">FOOD</span>
-        <span class="" onclick="moveAndPlay(2); markMenu(this);">WORK</span>
-        <span class="" onclick="moveAndPlay(3); markMenu(this);">TRANSPORT</span>
-        <span class="" onclick="moveAndPlay(4); markMenu(this);">MEDIA</span>
+        <span class="" onclick="markMenu(this, 1);">FOOD</span>
+        <span class="" onclick="markMenu(this, 2);">WORK</span>
+        <span class="" onclick="markMenu(this, 3);">TRANSPORT</span>
+        <span class="" onclick="markMenu(this, 4);">MEDIA</span>
       </div>
     </div>
     <table style="width: 100%; height: 100%;">
@@ -37,16 +37,28 @@
               <div class="viewport-size" style="position: relative;">
                 <div id="scrollcontainer" class="viewport-size" style="position: absolute;">
                   <div id="scrolltarget1" class="viewport-size x0 y0">
-                    <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+                    <img class="viewport-size" src="/clips/Kai-food.jpg" />
                   </div>
-                  <div id="scrolltarget2" class="viewport-size x1 y0">
-                    <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+                  <div id="scrolltarget2" class="viewport-size x0 y1">
+                    <img class="viewport-size" src="/clips/Martin-work.jpg" />
                   </div>
-                  <div id="scrolltarget3" class="viewport-size x0 y1 ">
-                    <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+                  <div id="scrolltarget3" class="viewport-size x0 y2 ">
+                    <img class="viewport-size" src="/clips/Kai-transporation.jpg" />
                   </div>
-                  <div id="scrolltarget4" class="viewport-size x1 y1">
-                    <img class="viewport-size" src="http://video-js.zencoder.com/oceans-clip.png" />
+                  <div id="scrolltarget4" class="viewport-size x0 y3">
+                    <img class="viewport-size" src="/clips/Malwina-media.jpg" />
+                  </div>
+                  <div id="scrolltarget5" class="viewport-size x1 y0">
+                    <img class="viewport-size" src="/clips/Malwina-food.jpg" />
+                  </div>
+                  <div id="scrolltarget6" class="viewport-size x1 y1">
+                    <img class="viewport-size" src="/clips/Kai-work.jpg" />
+                  </div>
+                  <div id="scrolltarget7" class="viewport-size x1 y2 ">
+                    <img class="viewport-size" src="/clips/Martin-transportation.jpg" />
+                  </div>
+                  <div id="scrolltarget8" class="viewport-size x1 y3">
+                    <img class="viewport-size" src="/clips/Martin-media.jpg" />
                   </div>
                 </div>
                 <div class="viewport-size">
@@ -68,9 +80,9 @@
     </table>
     <div class="footer" style="position: fixed; bottom: 0px; width: 100%;">
       <div class="viewport-width bottommenu" style="margin: 0 auto;">
-        <div id="b1" class="" onclick="moveAndPlay(1); markBottomMenu(this, 1);"></div>
-        <div id="b2" class="" onclick="moveAndPlay(1); markBottomMenu(this, 2);"></div>
-        <div id="b3" class="" onclick="moveAndPlay(1); markBottomMenu(this, 3);"></div>
+        <div id="b1" class="" onclick="markBottomMenu(this, 1);"></div>
+        <div id="b2" class="" onclick="markBottomMenu(this, 2);"></div>
+        <div id="b3" class="" onclick="markBottomMenu(this, 3);"></div>
       </div>
     </div>
   </body>
