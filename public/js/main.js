@@ -50,7 +50,7 @@ var updatePosition = function() {
   if (currentPerson && currentCategory) {
     var key = categories[currentCategory-1]+'_'+persons[currentPerson-1];
     if (posMap[key]) {
-      playVideo(posMap[key]);
+      moveAndPlay(posMap[key]);
     }
     else {
       console.log('nothing found for', key);
@@ -80,6 +80,9 @@ var playVideo = function (id) {
     myPlayer.currentTime(0);
     $('#video').show();
     myPlayer.play();
+    window.setTimeout(function() {
+      $('#video').show();
+    }, 300);
   });
 };
 

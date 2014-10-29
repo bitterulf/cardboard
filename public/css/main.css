@@ -33,6 +33,15 @@ body {
   top: 1577px;
 }
 
+.y2 {
+  top: 3154px;
+}
+
+.y3 {
+  top: 4731px;
+}
+
+
 #scrollcontainer {
   position: relative;
   border: 1px solid black;
