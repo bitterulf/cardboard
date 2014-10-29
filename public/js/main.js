@@ -5,6 +5,13 @@ var markMenu = function(elem) {
   $(elem).addClass('active');
 };
 
+var markBottomMenu = function(elem, id) {
+  $('.bottommenu div').removeClass('active1');
+  $('.bottommenu div').removeClass('active2');
+  $('.bottommenu div').removeClass('active3');
+  $(elem).addClass('active'+id);
+};
+
 var showMenu = function (id) {
   $('.menus').hide();
   $('.menu' + id).show();
