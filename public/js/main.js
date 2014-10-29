@@ -1,5 +1,10 @@
 var client = new Faye.Client('http://localhost:8080/pubsub');
 
+var showMenu = function(id) {
+  $('.menus').hide();
+  $('.menu'+id).show();
+};
+
 var playVideo = function(id) {
   videojs(id).ready(function(){
     var myPlayer = this;
@@ -15,23 +20,32 @@ $(document).ready(function() {
     client.publish('/message', {text: 'example message'});
   });
 
-  $('#button').click(function() {
+  $('.button1').click(function() {
     $('#scrollcontainer').scrollTo('#scrolltarget1', 1000);
+    showMenu(1);
   });
 
-  $('#button2').click(function() {
+  $('.button2').click(function() {
     $('#scrollcontainer').scrollTo('#scrolltarget2', 1000);
+    playVideo("example_video_1");
+    showMenu(2);
   });
 
-  $('#button3').click(function() {
+  $('.button3').click(function() {
     $('#scrollcontainer').scrollTo('#scrolltarget3', 1000);
-    playVideo("example_video_1");
+    showMenu(3);
+  });
+
+  $('.button4').click(function() {
+    $('#scrollcontainer').scrollTo('#scrolltarget4', 1000);
+    showMenu(4);
   });
 
   videojs("example_video_1").ready(function(){
     var myPlayer = this;
     myPlayer.on("ended", function(){
       $('#scrollcontainer').scrollTo('#scrolltarget1', 1000);
+      showMenu(1);
     });
   });
 
@@ -45,4 +59,6 @@ $(document).ready(function() {
   document.addEventListener('headtrackingEvent', function(event) {
     console.log(event.z);
   }, false);
+
+  showMenu(1);
 });

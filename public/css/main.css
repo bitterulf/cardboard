@@ -1,7 +1,32 @@
 #scrollcontainer {
   position: relative;
-  width: 640px;
-  height: 265px;
+  width: 800px;
+  height: 600px;
   border: 1px solid black;
   overflow: hidden;
+}
+
+#scrolltarget1 {
+  margin: 30px;
+  display: block;
+  width: 300px;
+  position: absolute; left: 200px; top: 200px;
+}
+
+#scrolltarget2 {
+  position: absolute; left: 1200px; top: 200px;
+}
+
+#scrolltarget3 {
+  margin: 30px;
+  display: block;
+  width: 300px;
+  position: absolute; left: 200px; top: 1200px;
+}
+
+#scrolltarget4 {
+  margin: 30px;
+  display: block;
+  width: 300px;
+  position: absolute; left: 1200px; top: 1200px;
 }
