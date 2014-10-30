@@ -2,6 +2,7 @@ var client = new Faye.Client('http://localhost:8080/pubsub');
 
 var currentPerson = 0;
 
+var lastCategory = 0;
 var currentCategory = 0;
 
 var clips = [
@@ -47,6 +48,22 @@ var posMap = {
 };
 
 var updatePosition = function() {
+
+  if (currentCategory != lastCategory) {
+    $( ".bg-img" ).animate({
+      opacity: 0.0
+    }, 200, function() {
+      // Animation complete.
+    });
+
+    $( "."+categories[currentCategory-1] ).animate({
+      opacity: 0.5
+    }, 800, function() {
+      // Animation complete.
+    });
+    lastCategory = currentCategory;
+  }
+
   if (currentPerson && currentCategory) {
     var key = categories[currentCategory-1]+'_'+persons[currentPerson-1];
     if (posMap[key]) {
@@ -129,13 +146,18 @@ $(document).ready(function () {
     currentZ = event.z;
   }, false);
 
+  var setVolume = function(volume) {
+    videojs('video').ready(function () {
+      this.volume(volume);
+    });
+  };
+
   window.setInterval(function () {
     if (currentZ != 0) {
       if (currentZ < 45) {
-        $('.detail').show();
+        setVolume(1);
       } else {
-        console.log('far');
-        $('.detail').hide();
+        setVolume(0);
       };
     }
   }, 1000);
