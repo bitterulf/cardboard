@@ -124,7 +124,7 @@ var playVideo = function (id) {
     var myPlayer = this;
     myPlayer.src("/clips/"+clips[id-1]+".webm");
     myPlayer.currentTime(0);
-    $('#video').show();
+    $('#curtain').show();
     myPlayer.play();
     window.setTimeout(function() {
       $('#video').show();
@@ -142,6 +142,7 @@ var stopVideo = function () {
 
 var moveAndPlay = function (id) {
   $('#video').hide();
+  $('#curtain').hide();
   $('#scrollcontainer').scrollTo('#scrolltarget'+id, 1000);
   window.setTimeout(function(){
     playVideo(id);
@@ -183,6 +184,13 @@ $(document).ready(function () {
 
   window.setInterval(function () {
     if (currentZ != 0) {
+      var darkness = 0;
+
+      if (lastCategory == 2, currentCategory == 2) {
+        darkness = currentZ/70;
+      }
+      $('#curtain').fadeTo( "slow" , darkness);
+
       if (currentZ < 45) {
         setVolume(1);
       } else {

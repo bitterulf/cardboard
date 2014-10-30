@@ -68,11 +68,12 @@
                   <div id="scrolltarget9" class="viewport-size x2 y4" style="background-image: url('/second_screen.svg'); background-repeat: no-repeat; background-position: center;">
                   </div>
                 </div>
-                <div class="viewport-size">
+                <div class="viewport-size" style="position: realtive;">
                   <video id="video" class="video-js vjs-default-skin" width="1024" height="577"
                           data-setup='{ "controls": false, "autoplay": false, "preload": "auto"}'>
                          <source src="/clips/clip1.webm" type='video/webm' />
                   </video>
+                  <div id='curtain' class="viewport-size" style="background: black; position: absolute; top: 0; left: 0; opacity: 0.5;"></div>
                 </div>
               </div>
             </div>
