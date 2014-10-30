@@ -166,6 +166,8 @@ $(document).ready(function () {
   var videoInput = document.getElementById('inputVideo');
   var canvasInput = document.getElementById('inputCanvas');
 
+  document.getElementById("music").volume = 0;
+
   var htracker = new headtrackr.Tracker();
   htracker.init(videoInput, canvasInput);
   htracker.start();
@@ -187,28 +189,33 @@ $(document).ready(function () {
       var darkness = 0;
 
       var volume = 1;
+      var volume2 = 0;
 
       if (lastCategory == 2, currentCategory == 2) {
         darkness = currentZ/70;
       }
 
       if (lastCategory == 4, currentCategory == 4) {
-        if (currentZ < 60) {
+        if (currentZ < 50) {
           volume = 1;
+          volume2 = 0;
         }
         else if (currentZ < 70) {
           volume = 0.5;
+          volume2 = 0.5;
         }
         else {
           volume = 0;
+          volume2 = 1;
         }
       }
 
       $('#curtain').fadeTo( "slow" , darkness);
 
       setVolume(volume);
+      document.getElementById("music").volume = volume2;
     }
-  }, 1000);
+  }, 500);
 
   showMenu(1);
   $('.detail').hide();
