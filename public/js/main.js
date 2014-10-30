@@ -186,16 +186,27 @@ $(document).ready(function () {
     if (currentZ != 0) {
       var darkness = 0;
 
+      var volume = 1;
+
       if (lastCategory == 2, currentCategory == 2) {
         darkness = currentZ/70;
       }
+
+      if (lastCategory == 4, currentCategory == 4) {
+        if (currentZ < 60) {
+          volume = 1;
+        }
+        else if (currentZ < 70) {
+          volume = 0.5;
+        }
+        else {
+          volume = 0;
+        }
+      }
+
       $('#curtain').fadeTo( "slow" , darkness);
 
-      if (currentZ < 45) {
-        setVolume(1);
-      } else {
-        setVolume(0);
-      };
+      setVolume(volume);
     }
   }, 1000);
 
