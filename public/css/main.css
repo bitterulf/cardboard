@@ -145,5 +145,5 @@ body {
 }
 
 .disabled {
-  color: grey !important;
+  text-decoration: line-through;
 }
