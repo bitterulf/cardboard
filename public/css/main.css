@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'cardboardcardboard';
+    src: url('/material/font/cardboard-webfont.eot');
+    src: url('/material/font/cardboard-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/material/font/cardboard-webfont.woff2') format('woff2'),
+         url('/material/font/cardboard-webfont.woff') format('woff'),
+         url('/material/font/cardboard-webfont.ttf') format('truetype'),
+         url('/material/font/cardboard-webfont.svg#cardboardcardboard') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .bg-img{
 	position: absolute;
 	top:0;
@@ -19,7 +32,7 @@
 body {
   background-image: url('/images/cardboard.png');
   text-align: center;
-  font-family: 'Special Elite', cursive;
+  font-family: 'cardboardcardboard';
   font-size: 30px;
   line-height: 60px;
 }
@@ -98,16 +111,10 @@ body {
 
 .topmenu span {
 	display: inline-block;
-	margin: 10px 20px 5px;
+	margin: 0px 20px 5px;
 	cursor: pointer;
 	color: #fff;
 }
-
-.topmenu span.active {
-  background-color: red;
-  color: white;
-}
-
 
 .bottommenu {
   height: 75px;
@@ -143,6 +150,11 @@ body {
   background-image: url('/images/face-martin-active.png') !important;
 }
 
-.disabled {
-  text-decoration: line-through;
-}
+.media, .media .media { margin:0 !important;}
+
+.disabled {opacity: .3; cursor: default !important;}
+
+#b2 {margin: 10px 200px;}
+
+.topmenu span {border-top: 5px solid transparent; text-shadow: 0px 0px 4px #000; margin: 0px 20px 5px;}
+.topmenu span.active {border-top: 5px solid #dc0000;}
