@@ -1,95 +1,83 @@
 <html>
   <head>
     <title>cardboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
-    <script src="/faye-client.js"></script>
-    <script src="/js/headtrackr.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="/js/jquery-scrollTo.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="/css/main.css" />
-    <script type="text/javascript" src="/js/main.js"></script>
-    <link href="//vjs.zencdn.net/4.10.0/video-js.css" rel="stylesheet" />
-    <script src="//vjs.zencdn.net/4.10.0/video.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+    <script src="//vjs.zencdn.net/4.10.0/video.js"></script>
+    <script src="/js/bigvideo.js"></script>
+    <script>
+
+      $(function() {
+          var BV = new $.BigVideo();
+          BV.init();
+          BV.show([
+              { type: "video/mp4",  src: "/material/warsaw.mp4" },
+              { type: "video/webm", src: "/material/warsaw.webm" },
+              { type: "video/ogg",  src: "/material/warsaw.ogv" }
+          ]);
+          // BV.show('material/warsaw.webm',{ambient:true});
+      });
+
+    </script>
+    <style type="text/css">
+      @font-face {
+          font-family: 'cardboardcardboard';
+          src: url('material/font/cardboard-webfont.eot');
+          src: url('material/font/cardboard-webfont.eot?#iefix') format('embedded-opentype'),
+               url('material/font/cardboard-webfont.woff2') format('woff2'),
+               url('material/font/cardboard-webfont.woff') format('woff'),
+               url('material/font/cardboard-webfont.ttf') format('truetype'),
+               url('material/font/cardboard-webfont.svg#cardboardcardboard') format('svg');
+          font-weight: normal;
+          font-style: normal;
+
+      }
+      body {
+        font-family: 'cardboardcardboard';
+        height:100%;
+        width:100%;
+        position: relative;
+      }
+      #big-video-wrap {
+        overflow: hidden;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+      .logo {
+        display: block;
+        position: absolute;
+        margin: auto;
+        width:60%;
+        height:100%;
+        top:0; right:0; bottom: 0; left:0;
+        /*background-color: rgba(255,255,255,.5);*/
+        background-image: url('/material/start.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+      }
+      .ournames {
+        color: #fff;
+        width:100%;
+        bottom:10px;
+        position: absolute;
+        text-align: center;
+      }
+      audio {position: absolute; visibility: hidden;}
+    </style>
   </head>
-  <body>
-    <div class="bg-img food"></div>
-    <div class="bg-img work"></div>
-    <div class="bg-img transport"></div>
-    <div class="bg-img media"></div>
-    <canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
-    <video id="inputVideo" autoplay loop style="display:none"></video>
-    <div class="header" style="position: fixed; width: 100%; z-index: 100;">
-      <div class="viewport-width topmenu" style="margin: 0 auto;">
-        <span id="food_button" class="" onclick="markMenu(this, 1);">FOOD</span>
-        <span id="work_button" class="" onclick="markMenu(this, 2);">WORK</span>
-        <span id="transport_button" class="" onclick="markMenu(this, 3);">TRANSPORT</span>
-        <span id="media_button" class="" onclick="markMenu(this, 4);">MEDIA</span>
-      </div>
-    </div>
-    <table style="width: 100%; height: 100%;">
-      <tr>
-        <td rowspan="3"></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <div class="content">
-            <div class="viewport-width" style="margin: 0 auto;">
-              <div class="viewport-size" style="position: relative;">
-                <div id="scrollcontainer" class="viewport-size" style="position: absolute;">
-                  <div id="scrolltarget1" class="viewport-size x0 y0">
-                    <img class="viewport-size" src="/clips/Kai-food.jpg" />
-                  </div>
-                  <div id="scrolltarget2" class="viewport-size x0 y1">
-                    <img class="viewport-size" src="/clips/Martin-work.jpg" />
-                  </div>
-                  <div id="scrolltarget3" class="viewport-size x0 y2 ">
-                    <img class="viewport-size" src="/clips/Kai-transporation.jpg" />
-                  </div>
-                  <div id="scrolltarget4" class="viewport-size x0 y3">
-                    <img class="viewport-size" src="/clips/Malwina-media.jpg" />
-                  </div>
-                  <div id="scrolltarget5" class="viewport-size x1 y0">
-                    <img class="viewport-size" src="/clips/Malwina-food.jpg" />
-                  </div>
-                  <div id="scrolltarget6" class="viewport-size x1 y1">
-                    <img class="viewport-size" src="/clips/Kai-work.jpg" />
-                  </div>
-                  <div id="scrolltarget7" class="viewport-size x1 y2 ">
-                    <img class="viewport-size" src="/clips/Martin-transportation.jpg" />
-                  </div>
-                  <div id="scrolltarget8" class="viewport-size x1 y3">
-                    <img class="viewport-size" src="/clips/Martin-media.jpg" />
-                  </div>
-                  <div id="scrolltarget9" class="viewport-size x2 y4">
-                    <div>choose your destiny</div>
-                  </div>
-                </div>
-                <div class="viewport-size">
-                  <video id="video" class="video-js vjs-default-skin" width="1024" height="577"
-                          data-setup='{ "controls": false, "autoplay": false, "preload": "auto"}'>
-                         <source src="/clips/clip1.webm" type='video/webm' />
-                  </video>
-                </div>
-              </div>
-            </div>
-          </div>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td rowspan="3"></td>
-      </tr>
-    </table>
-    <div class="footer" style="position: fixed; bottom: 0px; width: 100%;">
-      <div class="viewport-width bottommenu" style="margin: 0 auto;">
-        <div id="b1" class="" onclick="markBottomMenu(this, 1);"></div>
-        <div id="b2" class="" onclick="markBottomMenu(this, 2);"></div>
-        <div id="b3" class="" onclick="markBottomMenu(this, 3);"></div>
-      </div>
-    </div>
+  <body style="margin:0;">
+    <audio controls autoplay loop>
+      <source src="/material/sound.ogg" type="audio/ogg">
+      <source src="/material/sound.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <a href="start.html" class="logo"></a>
+    <div class="ournames">PROJEKT OF MALWINA ANTONISZCZAK, MARTIN CZYGAN, SEBASTIAN SCHLENDER, CORNELIUS VOIGT, ROBERT WOLTER</div>
   </body>
 </html>
