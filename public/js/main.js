@@ -16,6 +16,12 @@ var clips = [
   'Martin-media'
 ];
 
+var setupScene = function() {
+  $('#video').hide();
+  $('#scrollcontainer').scrollTo('#scrolltarget9');
+  console.log('setup complete');
+};
+
 var markMenu = function(elem, id) {
   currentCategory = id;
   $('.topmenu span').removeClass('active');
@@ -50,22 +56,22 @@ var posMap = {
 var hideEmpty = function() {
   var name = persons[currentPerson-1];
   if (name == 'kai') {
-    $('#food_button').show();
-    $('#work_button').show();
-    $('#transport_button').show();
-    $('#media_button').hide();
+    $('#food_button').removeClass('disabled');
+    $('#work_button').removeClass('disabled');
+    $('#transport_button').removeClass('disabled');
+    $('#media_button').addClass('disabled');
   }
   if (name == 'malwina') {
-    $('#food_button').show();
-    $('#work_button').hide();
-    $('#transport_button').hide();
-    $('#media_button').show();
+    $('#food_button').removeClass('disabled');
+    $('#work_button').addClass('disabled');
+    $('#transport_button').addClass('disabled');
+    $('#media_button').removeClass('disabled');
   }
   if (name == 'martin') {
-    $('#food_button').hide();
-    $('#work_button').show();
-    $('#transport_button').show();
-    $('#media_button').show();
+    $('#food_button').addClass('disabled');
+    $('#work_button').removeClass('disabled');
+    $('#transport_button').removeClass('disabled');
+    $('#media_button').removeClass('disabled');
   }
 }
 
@@ -187,4 +193,6 @@ $(document).ready(function () {
 
   showMenu(1);
   $('.detail').hide();
+
+  setupScene();
 });

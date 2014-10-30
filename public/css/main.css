@@ -42,6 +42,11 @@ body {
   left: 2024px;
 }
 
+.x2 {
+  position: absolute;
+  left: 4048px;
+}
+
 .y0 {
   top: 0px;
 }
@@ -58,6 +63,9 @@ body {
   top: 4731px;
 }
 
+.y4 {
+  top: 6308px;
+}
 
 #scrollcontainer {
   position: relative;
@@ -135,3 +143,6 @@ body {
   background-image: url('/images/face-martin-active.png') !important;
 }
 
+.disabled {
+  color: grey !important;
+}
