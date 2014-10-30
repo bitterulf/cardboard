@@ -128,6 +128,12 @@ var playVideo = function (id) {
     myPlayer.play();
     window.setTimeout(function() {
       $('#video').show();
+      if (currentPerson == 3 && currentCategory == 2) {
+        $('.dark_icon').show();
+      }
+      if (currentPerson == 3 && currentCategory == 4) {
+        $('.sound_icon').show();
+      }
     }, 300);
   });
 };
@@ -143,6 +149,8 @@ var stopVideo = function () {
 var moveAndPlay = function (id) {
   $('#video').hide();
   $('#curtain').hide();
+  $('.dark_icon').hide();
+  $('.sound_icon').hide();
   $('#scrollcontainer').scrollTo('#scrolltarget'+id, 1000);
   window.setTimeout(function(){
     playVideo(id);
@@ -167,6 +175,8 @@ $(document).ready(function () {
   var canvasInput = document.getElementById('inputCanvas');
 
   document.getElementById("music").volume = 0;
+  $('.dark_icon').hide();
+  $('.sound_icon').hide();
 
   var htracker = new headtrackr.Tracker();
   htracker.init(videoInput, canvasInput);
