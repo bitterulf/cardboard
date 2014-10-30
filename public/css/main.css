@@ -14,6 +14,7 @@
 .food { background-image: url('/material/bg-food.jpg'); }
 .transport { background-image: url('/material/bg-transport.jpg'); }
 .work { background-image: url('/material/bg-work.jpg'); }
+.start_bg { background-image: url('/material/bg-start.jpg'); }
 
 body {
   background-image: url('/images/cardboard.png');
