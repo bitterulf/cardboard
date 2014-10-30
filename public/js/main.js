@@ -191,11 +191,11 @@ $(document).ready(function () {
       var volume = 1;
       var volume2 = 0;
 
-      if (lastCategory == 2, currentCategory == 2) {
+      if (currentPerson == 3 && currentCategory == 2) {
         darkness = currentZ/70;
       }
 
-      if (lastCategory == 4, currentCategory == 4) {
+      if (currentPerson == 3 && currentCategory == 4) {
         if (currentZ < 50) {
           volume = 1;
           volume2 = 0;
@@ -210,7 +210,7 @@ $(document).ready(function () {
         }
       }
 
-      $('#curtain').fadeTo( "slow" , darkness);
+      $('#curtain').fadeTo( "fast" , darkness);
 
       setVolume(volume);
       document.getElementById("music").volume = volume2;
