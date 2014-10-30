@@ -47,7 +47,30 @@ var posMap = {
   'media_martin': 8
 };
 
+var hideEmpty = function() {
+  var name = persons[currentPerson-1];
+  if (name == 'kai') {
+    $('#food_button').show();
+    $('#work_button').show();
+    $('#transport_button').show();
+    $('#media_button').hide();
+  }
+  if (name == 'malwina') {
+    $('#food_button').show();
+    $('#work_button').hide();
+    $('#transport_button').hide();
+    $('#media_button').show();
+  }
+  if (name == 'martin') {
+    $('#food_button').hide();
+    $('#work_button').show();
+    $('#transport_button').show();
+    $('#media_button').show();
+  }
+}
+
 var updatePosition = function() {
+  hideEmpty();
 
   if (currentCategory != lastCategory) {
     $( ".bg-img" ).animate({
