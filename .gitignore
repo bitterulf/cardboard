@@ -2,3 +2,8 @@
 # https://help.github.com/articles/ignoring-files
 # Example .gitignore files: https://github.com/github/gitignore
 /node_modules/
+/public/clips
+/public/*.svg
+/public/*.mp3
+/public/material
+/public/images
