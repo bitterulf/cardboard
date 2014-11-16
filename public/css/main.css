@@ -154,7 +154,7 @@ body {
 
 .disabled {opacity: .3; cursor: default !important;}
 
-#b2 {margin: 10px 200px;}
+#b3 {margin: 10px 200px;}
 
 .topmenu span {border-top: 5px solid transparent; text-shadow: 0px 0px 4px #000; margin: 0px 20px 5px;}
 .topmenu span.active {border-top: 5px solid #dc0000;}

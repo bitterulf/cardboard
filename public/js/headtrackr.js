@@ -1603,15 +1603,14 @@ headtrackr.Ui = function() {
 	d.style.left = "20%";
 	d.style.right = "20%";
 	d.style.top = "30%";
-	d.style.fontSize = "90px";
+	d.style.fontSize = "20px";
 	d.style.color = "#777";
 	d.style.position = "absolute";
-	d.style.fontFamily = "Helvetica, Arial, sans-serif";
 	d.style.zIndex = '100002';
 
 	d2.style.marginLeft = "auto";
 	d2.style.marginRight = "auto";
-	d2.style.width = "100%";
+	d2.style.width = "60%";
 	d2.style.textAlign = "center";
 	d2.style.color = "#fff";
 	d2.style.backgroundColor = "#444";
@@ -1628,14 +1627,13 @@ headtrackr.Ui = function() {
   };
 
   var statusMessages = {
-    "whitebalance" : "Waiting for camera whitebalancing",
-    "detecting" : "Please wait while camera is detecting your face...",
+    "whitebalance" : "calibration",
+    "detecting" : "please wait while camera is detecting your face...",
     "hints" : "We seem to have some problems detecting your face. Please make sure that your face is well and evenly lighted, and that your camera is working.",
     "redetecting" : "Trying to find you...",
     "lost" : "I can't see you anymore.",
     "found" : "Hello my friend!"
   };
-
   var override = false;
 
 	// function to call messages (and to fade them out after a time)
